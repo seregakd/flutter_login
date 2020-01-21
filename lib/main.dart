@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'users.dart';
 
 void main() => runApp(new MyApp());
 
@@ -33,8 +34,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordFilter = new TextEditingController();
   String _email = "";
   String _password = "";
-  FormType _form = FormType.login; // our default setting is to login, and we should switch to creating an account when the user chooses to
-
+  FormType _form = FormType.login;
   _LoginPageState() {
     _emailFilter.addListener(_emailListen);
     _passwordFilter.addListener(_passwordListen);
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildBar(BuildContext context) {
     return new AppBar(
-      title: new Text("Simple Login Example"),
+      title: new Text("List wirh login"),
       centerTitle: true,
     );
   }
@@ -154,10 +154,9 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  // These functions can self contain any user auth logic required, they all have access to _email and _password
-
   void _loginPressed () {
     print('The user wants to login with $_email and $_password');
+
   }
 
   void _createAccountPressed () {
