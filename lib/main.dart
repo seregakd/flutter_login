@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildBar(BuildContext context) {
     return new AppBar(
-      title: new Text("List wirh login"),
+      title: new Text("List with login"),
       centerTitle: true,
     );
   }
@@ -157,10 +157,10 @@ class _LoginPageState extends State<LoginPage> {
   void _loginPressed () {
     print('The user wants to login with $_email and $_password');
     if (!users.containsKey(_email)) {
-      _viewShowDialog("Error input login");
+      _viewShowDialog('Username not exists');
     } else {
       if(users[_email] != _password) {
-        _viewShowDialog("Error input password");
+        _viewShowDialog('Password does not match');
       } else {
 
       }
