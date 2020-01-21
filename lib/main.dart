@@ -156,8 +156,36 @@ class _LoginPageState extends State<LoginPage> {
 
   void _loginPressed () {
     print('The user wants to login with $_email and $_password');
+    if (!users.containsKey(_email)) {
+      _viewShowDialog("Error input login");
+    } else {
+      if(users[_email] != _password) {
+        _viewShowDialog("Error input password");
+      } else {
 
+      }
+    }
   }
+
+  void _viewShowDialog(String errorMessage){
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: ListTile(
+          title: Text("Error!"),
+          subtitle: Text(errorMessage),
+        ),
+        actions: <Widget>[
+          FlatButton(
+            color: Colors.amber,
+            child: Text('Ok'),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+        ],
+      ),
+    );
+  }
+
 
   void _createAccountPressed () {
     print('The user wants to create an accoutn with $_email and $_password');
