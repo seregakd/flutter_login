@@ -38,7 +38,7 @@ class ItemList extends StatelessWidget  {
         children: [
           Ink(
             decoration: const ShapeDecoration(
-              color: Colors.orange,
+              color: Colors.lightBlueAccent,
               shape: CircleBorder(),
             ),
             child: IconButton(
@@ -52,7 +52,7 @@ class ItemList extends StatelessWidget  {
           Text(itemModel.counter.toString()),
           Ink(
             decoration: const ShapeDecoration(
-              color: Colors.orange,
+              color: Colors.lightBlueAccent,
               shape: CircleBorder(),
             ),
             child: IconButton(

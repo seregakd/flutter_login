@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'list_with_chekbox.dart';
+import 'package:flutter_login/view_list.dart';
 import 'users.dart';
 
 void main() => runApp(new MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       home: new LoginPage(),
       routes: {
         '/login':(context) => LoginPage(),
-        '/list':(context) => ListWithChekbox()
+        '/list':(context) => ViewList()
       },
     );
   }
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
       if(users[_email] != _password) {
         _viewShowDialog('Password does not match');
       } else {
-
+        Navigator.pushReplacementNamed(context, '/list');
       }
     }
   }
