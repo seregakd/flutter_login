@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'list_with_chekbox.dart';
 
 class ViewList extends StatelessWidget {
@@ -7,25 +6,16 @@ class ViewList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: _buildTitle()
+          title: _buildTitle(context)
       ),
       body: ListWithChekbox(),
     );
   }
-  Widget _buildTitle() {}
-/*
-  Widget _buildTitle() {
-    return Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(children: [
-            Checkbox(value: _valueTitleCb, onChanged: _valueTitleCheckboxChanged),
-            Text('Select all'),
-          ]),
-          Text(_allCount.toString()),
-        ]
+
+  Widget _buildTitle(BuildContext context) {
+    return RaisedButton(
+      onPressed: () => Navigator.pushReplacementNamed(context, '/login'),
+      child: Text('Login selection'),
     );
   }
-  */
 }
