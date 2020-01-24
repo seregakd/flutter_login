@@ -8,8 +8,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  final TextEditingController _emailFilter = new TextEditingController();
-  final TextEditingController _passwordFilter = new TextEditingController();
+  final _emailFilter = TextEditingController();
+  final _passwordFilter = TextEditingController();
   String _email = "";
   String _password = "";
 
@@ -19,19 +19,11 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _emailListen() {
-    if (_emailFilter.text.isEmpty) {
-      _email = "";
-    } else {
-      _email = _emailFilter.text;
-    }
+    _email = _emailFilter.text;
   }
 
   void _passwordListen() {
-    if (_passwordFilter.text.isEmpty) {
-      _password = "";
-    } else {
-      _password = _passwordFilter.text;
-    }
+    _password = _passwordFilter.text;
   }
 
   @override
