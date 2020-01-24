@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'Item_list.dart';
 import 'Item_model.dart';
+import 'utils.dart';
 
 class ListWithChekbox extends StatefulWidget {
-
   @override
   _ListWithChekboxState createState() => _ListWithChekboxState();
 }
@@ -14,6 +14,7 @@ class _ListWithChekboxState extends State<ListWithChekbox> {
   bool _valueTitleCb = false;
   List models = <ItemModel>[];
   ItemModel itemModel;
+  var _utils = Utils();
 
   void _addItem() {
     setState(() {
@@ -57,12 +58,16 @@ class _ListWithChekboxState extends State<ListWithChekbox> {
         });
       }
     } else {
-      itemModel.counter--;
+      if (itemModel.counter > 0) {
+        itemModel.counter--;
 
-      if (itemModel.valueCheckbox) {
-        setState(() {
-          _allCount--;
-        });
+        if (itemModel.valueCheckbox) {
+          setState(() {
+            _allCount--;
+          });
+        }
+      } else {
+          _utils.viewShowDialog(context, "Counter must be positive");
       }
     }
 

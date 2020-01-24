@@ -87,17 +87,17 @@ class _LoginPageState extends State<LoginPage> {
 
   void _loginPressed () {
     if (!users.containsKey(_email)) {
-      _viewShowDialog('Username not exists');
+      _viewShowDialog(context, 'Username not exists');
     } else {
       if(users[_email] != _password) {
-        _viewShowDialog('Password does not match');
+        _viewShowDialog(context, 'Password does not match');
       } else {
         Navigator.pushReplacementNamed(context, '/list');
       }
     }
   }
 
-  void _viewShowDialog(String errorMessage){
+  void _viewShowDialog(BuildContext context, String errorMessage){
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
