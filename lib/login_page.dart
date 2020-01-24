@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'utils.dart';
 import 'users.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,6 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordFilter = TextEditingController();
   String _email = "";
   String _password = "";
+  var _utils = Utils();
 
   _LoginPageState() {
     _emailFilter.addListener(_emailListen);
@@ -87,32 +89,13 @@ class _LoginPageState extends State<LoginPage> {
 
   void _loginPressed () {
     if (!users.containsKey(_email)) {
-      _viewShowDialog(context, 'Username not exists');
+      _utils.viewShowDialog(context, 'Username not exists');
     } else {
       if(users[_email] != _password) {
-        _viewShowDialog(context, 'Password does not match');
+        _utils.viewShowDialog(context, 'Password does not match');
       } else {
         Navigator.pushReplacementNamed(context, '/list');
       }
     }
-  }
-
-  void _viewShowDialog(BuildContext context, String errorMessage){
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        content: ListTile(
-          title: Text("Error!"),
-          subtitle: Text(errorMessage),
-        ),
-        actions: <Widget>[
-          FlatButton(
-            color: Colors.amber,
-            child: Text('Ok'),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-        ],
-      ),
-    );
   }
 }
