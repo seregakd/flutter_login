@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-class Utils {
-
   void viewShowDialog(BuildContext context, String errorMessage){
     showDialog(
       context: context,
@@ -21,4 +19,3 @@ class Utils {
       ),
     );
   }
-}

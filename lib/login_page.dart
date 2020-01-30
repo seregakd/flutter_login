@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'utils.dart';
+import 'Services.dart';
 import 'users.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,7 +11,6 @@ class _LoginPageState extends State<LoginPage> {
 
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  var _utils = Utils();
 
   @override
   void dispose() {
@@ -75,11 +74,11 @@ class _LoginPageState extends State<LoginPage> {
   void _loginPressed () {
 
     if (!users.containsKey(_emailController.text)) {
-      return _utils.viewShowDialog(context, 'Username not exists');
+      return viewShowDialog(context, 'Username not exists');
     }
 
     if (users[_emailController.text] != _passwordController.text) {
-      return _utils.viewShowDialog(context, 'Password does not match');
+      return viewShowDialog(context, 'Password does not match');
     }
 
     Navigator.pushReplacementNamed(context, '/list');
