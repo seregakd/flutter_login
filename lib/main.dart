@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login/view_list.dart';
-import 'login_page.dart';
+import 'package:flutter_login/ui/view_list.dart';
+import 'ui/login_page.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'List with login',
       theme: new ThemeData(
           primarySwatch: Colors.blue
