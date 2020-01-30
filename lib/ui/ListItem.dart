@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import '../model/ItemModel.dart';
 
-class ItemList extends StatelessWidget  {
+class ListItem extends StatelessWidget  {
   final ItemModel itemModel;
   final int listItemNumber;
   final Function parentCount;
   final Function parentCb;
 
-  ItemList({Key key, this.itemModel, this.listItemNumber,
+  ListItem({Key key, this.itemModel, this.listItemNumber,
     @required this.parentCount, @required this.parentCb}) :  super(key: key);
 
   void _valueCbChanged(bool value) {

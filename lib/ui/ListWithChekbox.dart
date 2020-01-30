@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ItemList.dart';
+import 'ListItem.dart';
 import '../model/ItemModel.dart';
 import '../Services.dart';
 
@@ -130,7 +130,7 @@ class _ListWithChekboxState extends State<ListWithChekbox> {
         padding: const EdgeInsets.all(16.0),
         itemCount: models.length,
         itemBuilder: (context, i){
-        return ItemList(itemModel: models[i], listItemNumber: i,
+        return ListItem(itemModel: models[i], listItemNumber: i,
           parentCount: refreshCount, parentCb: refreshCheckbox);
         }
     );
