@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login/ui/view_list.dart';
 import 'ui/login_page.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'List with login',
-      theme: new ThemeData(
+      theme: ThemeData(
           primarySwatch: Colors.blue
       ),
       debugShowCheckedModeBanner: false,
-      home: new LoginPage(),
+      home: LoginPage(),
       routes: {
         '/login':(context) => LoginPage(),
         '/list':(context) => ViewList()
