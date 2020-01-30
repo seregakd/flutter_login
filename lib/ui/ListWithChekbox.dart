@@ -18,7 +18,7 @@ class _ListWithChekboxState extends State<ListWithChekbox> {
   void _addItem() {
     setState(() {
       models.add(ItemModel(valueCheckbox: _valueTitleCb,
-          itemText: "Item " + (_nameCounter++).toString(), counter: 0));
+        itemText: "Item " + (_nameCounter++).toString(), counter: 0));
     });
   }
 
