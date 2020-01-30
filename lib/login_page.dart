@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
             child: new TextField(
               controller: _emailFilter,
               decoration: new InputDecoration(
-                  labelText: 'Email'
+                labelText: 'Email',
               ),
             ),
           ),
@@ -88,14 +88,15 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _loginPressed () {
+
     if (!users.containsKey(_email)) {
-      _utils.viewShowDialog(context, 'Username not exists');
-    } else {
-      if(users[_email] != _password) {
-        _utils.viewShowDialog(context, 'Password does not match');
-      } else {
-        Navigator.pushReplacementNamed(context, '/list');
-      }
+      return _utils.viewShowDialog(context, 'Username not exists');
     }
+
+    if (users[_email] != _password) {
+      return _utils.viewShowDialog(context, 'Password does not match');
+    }
+
+    Navigator.pushReplacementNamed(context, '/list');
   }
 }
