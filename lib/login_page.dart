@@ -9,29 +9,14 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  final _emailFilter = TextEditingController();
-  final _passwordFilter = TextEditingController();
-  String _email = "";
-  String _password = "";
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   var _utils = Utils();
-
-  _LoginPageState() {
-    _emailFilter.addListener(_emailListen);
-    _passwordFilter.addListener(_passwordListen);
-  }
-
-  void _emailListen() {
-    _email = _emailFilter.text;
-  }
-
-  void _passwordListen() {
-    _password = _passwordFilter.text;
-  }
 
   @override
   void dispose() {
-    _emailFilter.dispose();
-    _passwordFilter.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 
@@ -67,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
         children: <Widget>[
           new Container(
             child: new TextField(
-              controller: _emailFilter,
+              controller: _emailController,
               decoration: new InputDecoration(
                 labelText: 'Email',
               ),
@@ -75,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           new Container(
             child: new TextField(
-              controller: _passwordFilter,
+              controller: _passwordController,
               decoration: new InputDecoration(
                   labelText: 'Password'
               ),
@@ -89,11 +74,11 @@ class _LoginPageState extends State<LoginPage> {
 
   void _loginPressed () {
 
-    if (!users.containsKey(_email)) {
+    if (!users.containsKey(_emailController.text)) {
       return _utils.viewShowDialog(context, 'Username not exists');
     }
 
-    if (users[_email] != _password) {
+    if (users[_emailController.text] != _passwordController.text) {
       return _utils.viewShowDialog(context, 'Password does not match');
     }
 
