@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/ui/view_list.dart';
-import 'ui/login_page.dart';
+import 'ui/LoginPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'List with login',
       theme: ThemeData(
-          primarySwatch: Colors.blue
+        primarySwatch: Colors.blue
       ),
       debugShowCheckedModeBanner: false,
       home: LoginPage(),

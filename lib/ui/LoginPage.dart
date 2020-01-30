@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Services.dart';
-import '../data/users.dart';
+import '../data/Users.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       child: Column(
         children: <Widget>[
-          new Container(
+          Container(
             child: TextField(
               controller: _emailController,
               decoration: InputDecoration(
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               controller: _passwordController,
               decoration: InputDecoration(
-                  labelText: 'Password'
+                labelText: 'Password'
               ),
               obscureText: true,
             ),

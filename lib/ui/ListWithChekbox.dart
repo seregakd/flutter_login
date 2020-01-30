@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Item_list.dart';
-import '../model/Item_model.dart';
+import 'ItemList.dart';
+import '../model/ItemModel.dart';
 import '../Services.dart';
 
 class ListWithChekbox extends StatefulWidget {
@@ -113,15 +113,15 @@ class _ListWithChekboxState extends State<ListWithChekbox> {
 
   Widget _buildTitle() {
     return Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(children: [
-            Checkbox(value: _valueTitleCb, onChanged: _valueTitleCheckboxChanged),
-            Text('Select all'),
-          ]),
-          Text(_allCount.toString()),
-        ]
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(children: [
+          Checkbox(value: _valueTitleCb, onChanged: _valueTitleCheckboxChanged),
+          Text('Select all'),
+        ]),
+        Text(_allCount.toString()),
+      ]
     );
   }
 
